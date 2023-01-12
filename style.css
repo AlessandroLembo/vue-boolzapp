@@ -42,6 +42,18 @@ img{
     padding-left: 20px;
 }
 
+.left-exbig-mrg{
+    /* margin-left: 2rem; */
+}
+
+.right-exbig-mrg{
+    /* margin-right: 2rem; */
+}
+
+.md-size-text{
+    font-size: 25px;
+}
+
 /** Side-bar */
 .side-bar{
     width: 35%;
@@ -83,8 +95,7 @@ img{
     align-items: center;
 }
 
-.my-name,
-.friends-name{
+.md-size-text{
     font-size: 25px;
 }
 
@@ -125,7 +136,7 @@ img{
     border: 1px dashed black;
 
     position: relative;
-    padding-top: 120px;
+    padding-top: 100px;
 }
 
 .header-container, 
@@ -140,14 +151,61 @@ img{
 
 .header-container{
     top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.current-chat{
+    flex-basis: 50%;
+    border: 1px dashed yellow;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.last-access{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.setting-current-chat{
+    flex-basis: 50%;
+    border: 1px dashed yellow;
 }
 
 .main-container{
     height: calc(100% - 100px);
     overflow-y: auto;
+    background-image: url(img/mine.jpg);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.friend-text,
+.my-text{
+    flex-basis: 50%;
+    border: 1px dashed purple;
+    height: 100px;
 }
 
 .footer-container{
     bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.emoticons,
+.vocal-message{
+    flex-basis: 10%;
+    border: 1px dashed purple;
+    height: 80px;
+}
+
+.box-message{
+    flex-basis: 80%;
+    border: 1px dashed purple;
+    height: 80px;
 }
 
