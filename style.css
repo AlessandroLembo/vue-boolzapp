@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
+
+/** Generics */
 #root{
     height: 100vh;
-    /* width: 100vh; */
     background-image: linear-gradient(rgb(77, 131, 156) 15%, rgb(197, 203, 206) 15%, lightgray);
     
     display: flex;
@@ -22,6 +23,26 @@
     display: flex;
 }
 
+/** Utils */
+img{
+    max-width: 100%;
+    border-radius: 50%;
+    height: 80px;
+}
+
+.left-exsmall-pdg{
+    padding-left: 5px;
+}
+
+.left-small-pdg{
+   padding-left: 10px;
+}
+
+.left-md-pdg{
+    padding-left: 20px;
+}
+
+/** Side-bar */
 .side-bar{
     width: 35%;
     height: 100%;
@@ -30,26 +51,74 @@
     position: relative;
 }
 
-.side-bar-top{
-    height: 30%;
-    width: 100%;
+.side-bar-top,
+.side-bar-bottom{
     border: 1px dashed red;
     position: absolute;
+    left: 0;  
+    right: 0;
+}
+
+.side-bar-top{
+    height: 30%;
     top: 0;
-    left: 0;
     z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* sections sidebar top */
+.my-profile{
+    flex-basis: 100px;
+    border: 1px dashed yellow;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-picture{
+    display: flex;
+    align-items: center;
+}
+
+.my-name,
+.friends-name{
+    font-size: 25px;
+}
+
+.settings{
+    border: 1px dashed yellow;
+    height: 100%;
+    flex-basis: 50%;
+}
+
+.notifications{
+    flex-basis: calc(100% - 180px);
+    border: 1px dashed yellow;
+}
+
+.search{
+    flex-basis: 80px;
+    border: 1px dashed yellow;
 }
 
 .side-bar-bottom{
     height: 70%;
-    width: 100%;
-    border: 1px dashed red;
-    position: absolute;
     bottom: 0;
-    left: 0;
     overflow-y: auto;
 }
 
+.friends-picture{
+    display: flex;
+    align-items: center;
+    height: 120px;
+    border: 1px dashed purple;
+}
+
+
+/** Chat content */
 .content{
     width: 65%;
     height: 100%;
@@ -59,14 +128,18 @@
     padding-top: 120px;
 }
 
-.header-container{
+.header-container, 
+.footer-container{
     height: 100px;
     border: 1px dashed red;
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
     z-index: 1;
+}
+
+.header-container{
+    top: 0;
 }
 
 .main-container{
@@ -75,12 +148,6 @@
 }
 
 .footer-container{
-    height: 100px;
-    border: 1px dashed red;
-    position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
 }
 
