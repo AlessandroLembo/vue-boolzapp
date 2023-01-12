@@ -21,7 +21,9 @@
 <body>
     <div id="root">
         <div class="container">
+            <!-- SIDEBAR -->
             <div class="side-bar">
+                <!-- Top Sidebar -->
                 <div class="side-bar-top">
                     <div class="my-profile lightgray-color">
                         <figure class="my-picture left-small-pdg">
@@ -29,7 +31,7 @@
                             <p class="md-size-text left-exsmall-pdg">Giulia Marino</p>
                         </figure>
                         <div class="settings right-md-pdg">
-                            <i class="fa-thin fa-circle-notch icon-style"></i>
+                            <i class="fa-regular fa-circle icon-style"></i>
                             <i class="fa-solid fa-message icon-style"></i>
                             <i class="fa-solid fa-ellipsis-vertical icon-style"></i>
                         </div>
@@ -40,15 +42,17 @@
                                 <i class="fa-solid fa-bell-slash icon-style"></i>
                             </div>
                             <div class="new-message left-small-pdg">
-                                <p class="sm-size-text">Ricevi notifiche di nuovi messaggi</p>
-                                <p class="sm-size-text">Attiva notifiche di testo</p>
+                                <p class="md-size-text">Ricevi notifiche di nuovi messaggi</p>
+                                <a href="#" class="sm-size-text link-notifications-color">Attiva notifiche di testo</a>
                             </div>
                         </div>
                     </div>
                     <div class="search white-color">
-                        <input type="text" class="search-box icon-search-box" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" class="search-box icon-search-box input-style" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
+
+                <!-- Bottom Sidebar -->
                 <div class="side-bar-bottom white-color">
                     <figure class="friends-picture left-md-pdg">
                         <img src="img/avatar_1.jpg" alt="avatar 1">
@@ -69,8 +73,10 @@
                 </div>
             
             </div>
-
+            
+            <!-- Right space, CHAT MESSAGE -->
             <div class="content">
+                <!-- Header chat message -->
                 <header class="header-container lightgray-color">
                     <div class="current-chat">
                         <figure>
@@ -81,20 +87,42 @@
                             <p class="md-size-text last-access">Ultimo accesso oggi alle</p>
                         </div>
                     </div>
-                    <div class="setting-current-chat">
+                    <div class="setting-current-chat right-md-pdg">
                         <i class="fa-solid fa-magnifying-glass icon-style"></i>
                         <i class="fa-solid fa-paperclip icon-style"></i>
                         <i class="fa-solid fa-ellipsis-vertical icon-style"></i>
                     </div>
                 </header>
+                
+                <!-- Main chat message -->
                 <main class="main-container">
-                    <div class="friend-text left-exbig-mrg"></div>
-                    <div class="my-text right-exbig-mrg"></div>
+                    <div class="content-chat">
+                        <div class="row friend-text">
+                            <div class="box-message bkg-white">
+                                <p class="md-size-text">Stasera pizza fatta in casa</p>
+                                <span class="last-message-date">10/01/2020 15:30:55</span>
+                            </div>
+                        </div>
+                        <div class="row my-text">
+                            <div class="box-message bkg-green">
+                                <p class="md-size-text">Ci sono! Per che ora veniamo?</p>
+                                <span class="last-message-date">10/01/2020 15:50:00</span>
+                            </div>
+                        </div>                        
+                    </div>
                 </main>
+                
+                <!-- Footer, send new message -->
                 <footer class="footer-container smoke-color">
-                    <div class="emoticons"><i class="fa-regular fa-face-smile icon-style"></i></div>
-                    <div class="box-message"></div>
-                    <div class="vocal-message"><i class="fa-solid fa-microphone icon-style"></i></div>
+                    <div class="emoticons">
+                        <i class="fa-regular fa-face-smile icon-style"></i>
+                    </div>
+                    <div class="box-container">
+                        <input type="text" class="box-new-message input-style" placeholder="Scrivi un messaggio">
+                    </div>
+                    <div class="vocal-message">
+                        <i class="fa-solid fa-microphone icon-style"></i>
+                    </div>
                     
                 </footer>
             </div>
