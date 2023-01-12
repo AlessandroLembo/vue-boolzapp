@@ -18,18 +18,37 @@
 .container{
     width: 80%;
     height: 95%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
     display: flex;
 }
 
-/** Utils */
 img{
     max-width: 100%;
     border-radius: 50%;
     height: 80px;
 }
 
+/** Utils */
+/* backgroun color */
+.lightgray-color{
+    background-color:rgb(197, 203, 206);
+}
+
+.azure-color{
+    background-color:  #00e6e6;
+}
+
+.white-color{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.smoke-color{
+    background-color: whitesmoke;
+}
+
+
+/* Space */
 .left-exsmall-pdg{
     padding-left: 5px;
 }
@@ -42,37 +61,45 @@ img{
     padding-left: 20px;
 }
 
-.left-exbig-mrg{
-    /* margin-left: 2rem; */
+.right-md-pdg{
+    padding-right: 20px;
 }
 
-.right-exbig-mrg{
-    /* margin-right: 2rem; */
+.icon-style{
+    padding: 0 10px;
+    font-size: 30px;
+    color:rgb(116, 119, 121);
 }
 
+
+/* Size text */
 .md-size-text{
     font-size: 25px;
+}
+
+.sm-size-text{
+    font-size: 20px;
 }
 
 /** Side-bar */
 .side-bar{
     width: 35%;
     height: 100%;
-    border: 1px dashed black;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
 
     position: relative;
 }
 
 .side-bar-top,
 .side-bar-bottom{
-    border: 1px dashed red;
+    /* border: 1px dashed red; */
     position: absolute;
     left: 0;  
     right: 0;
 }
 
 .side-bar-top{
-    height: 30%;
+    height: 330px;
     top: 0;
     z-index: 1;
 
@@ -82,8 +109,8 @@ img{
 
 /* sections sidebar top */
 .my-profile{
-    flex-basis: 100px;
-    border: 1px dashed yellow;
+    flex-basis: 110px;
+    /* border: 1px dashed yellow; */
 
     display: flex;
     justify-content: space-between;
@@ -95,28 +122,70 @@ img{
     align-items: center;
 }
 
-.md-size-text{
-    font-size: 25px;
-}
-
 .settings{
-    border: 1px dashed yellow;
     height: 100%;
     flex-basis: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .notifications{
-    flex-basis: calc(100% - 180px);
-    border: 1px dashed yellow;
+    flex-basis: 130px;
+}
+
+.get-notifications{
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.icon-notification{
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-notification i{
+    color: #00e6e6;
+}
+
+.new-message p:nth-child(2){
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .search{
-    flex-basis: 80px;
-    border: 1px dashed yellow;
+    flex-basis: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box{
+    height: 80%;
+    width: 95%;
+    background-color: white;
+    font-size: 18px;
+    border: 0;
+    padding-left: 75px;
+    
+}
+
+.icon-search-box{
+    background-image: url('https://www.shutterstock.com/shutterstock/videos/1069545793/thumb/1.jpg?ip=x480');
+    background-size: 70px;
+    background-position-y: 20px;
+    background-repeat: no-repeat;
 }
 
 .side-bar-bottom{
-    height: 70%;
+    height: calc(100% - 330px);
     bottom: 0;
     overflow-y: auto;
 }
@@ -125,7 +194,7 @@ img{
     display: flex;
     align-items: center;
     height: 120px;
-    border: 1px dashed purple;
+    /* border: 1px dashed purple; */
 }
 
 
@@ -133,7 +202,7 @@ img{
 .content{
     width: 65%;
     height: 100%;
-    border: 1px dashed black;
+    /* border: 1px dashed black; */
 
     position: relative;
     padding-top: 100px;
@@ -141,8 +210,8 @@ img{
 
 .header-container, 
 .footer-container{
-    height: 100px;
-    border: 1px dashed red;
+    height: 110px;
+    /* border: 1px dashed red; */
     position: absolute;
     left: 0;
     right: 0;
@@ -157,7 +226,7 @@ img{
 
 .current-chat{
     flex-basis: 50%;
-    border: 1px dashed yellow;
+    /* border: 1px dashed yellow; */
     padding-left: 10px;
     display: flex;
     align-items: center;
@@ -165,15 +234,16 @@ img{
 
 .last-access{
     color: rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 0px lightgrey;
 }
 
 .setting-current-chat{
     flex-basis: 50%;
-    border: 1px dashed yellow;
+    /* border: 1px dashed yellow; */
 }
 
 .main-container{
-    height: calc(100% - 100px);
+    height: calc(100% - 110px);
     overflow-y: auto;
     background-image: url(img/mine.jpg);
 
@@ -185,7 +255,7 @@ img{
 .friend-text,
 .my-text{
     flex-basis: 50%;
-    border: 1px dashed purple;
+    /* border: 1px dashed purple; */
     height: 100px;
 }
 
@@ -199,13 +269,13 @@ img{
 .emoticons,
 .vocal-message{
     flex-basis: 10%;
-    border: 1px dashed purple;
+    /* border: 1px dashed purple; */
     height: 80px;
 }
 
 .box-message{
     flex-basis: 80%;
-    border: 1px dashed purple;
+    /* border: 1px dashed purple; */
     height: 80px;
 }
 
