@@ -54,21 +54,9 @@
 
                 <!-- Bottom Sidebar -->
                 <div class="side-bar-bottom white-color">
-                    <figure class="friends-picture left-md-pdg">
-                        <img src="img/avatar_1.jpg" alt="avatar 1">
-                        <p class="md-size-text left-small-pdg">Michele</p>
-                    </figure>
-                    <figure class="friends-picture left-md-pdg">
-                        <img src="img/avatar_2.jpg" alt="avatar 2">
-                        <p class="md-size-text left-small-pdg">Fabio</p>
-                    </figure>
-                    <figure class="friends-picture left-md-pdg">
-                        <img src="img/avatar_3.jpg" alt="avatar 3">
-                        <p class="md-size-text left-small-pdg">Samuele</p>
-                    </figure>
-                    <figure class="friends-picture left-md-pdg">
-                        <img src="img/avatar_4.jpg" alt="avatar 4">
-                        <p class="md-size-text left-small-pdg">Gianni</p>
+                    <figure v-for="contact in contacts" class="friends-picture left-md-pdg">
+                        <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="avatar 1">
+                        <p class="md-size-text left-small-pdg"> {{contact.name}} </p>
                     </figure>
                 </div>
             
