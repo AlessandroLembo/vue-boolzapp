@@ -54,7 +54,7 @@
 
                 <!-- Bottom Sidebar -->
                 <div class="side-bar-bottom white-color">
-                    <figure v-for="contact in contacts" class="friends-picture left-md-pdg">
+                    <figure v-for="(contact, i) in contacts" class="friends-picture left-md-pdg" @click="showCurrentConversation(i)">
                         <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="avatar">
                         <p class="md-size-text left-small-pdg"> {{contact.name}} </p>
                     </figure>

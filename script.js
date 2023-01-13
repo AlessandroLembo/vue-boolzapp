@@ -127,7 +127,7 @@ const app = Vue.createApp ({
     }, 
 
     methods: {
-         setCurrentIndex(index){
+         showCurrentConversation(index){
             this.currentIndex = index;
          }
 
