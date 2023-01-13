@@ -270,7 +270,6 @@ img{
 .row{
     width: 100%;
     height: 150px;
-
     display: flex;
     align-items: center;
 }
@@ -284,10 +283,9 @@ img{
 }
 
 .box-message{
-    width: 300px;
     border-radius: 10px;
     margin: 0 8rem;
-    padding: 20px 10px 5px;
+    padding: 20px 20px 5px;
 
     display: flex;
     flex-direction: column;

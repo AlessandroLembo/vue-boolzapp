@@ -27,11 +27,11 @@
                 <div class="side-bar-top">
                     <div class="my-profile lightgray-color">
                         <figure class="my-picture left-small-pdg">
-                            <img src="img/avatar_io.jpg" alt="my-picture">
-                            <p class="md-size-text left-exsmall-pdg">Giulia Marino</p>
+                            <img :src="`img/avatar${user.avatar}.jpg`" alt="my-picture">
+                            <p class="md-size-text left-exsmall-pdg">{{user.name}}</p>
                         </figure>
                         <div class="settings right-md-pdg">
-                            <i class="fa-regular fa-circle icon-style"></i>
+                            <i class="fa-solid fa-circle-notch icon-style"></i>
                             <i class="fa-solid fa-message icon-style"></i>
                             <i class="fa-solid fa-ellipsis-vertical icon-style"></i>
                         </div>
@@ -54,8 +54,8 @@
 
                 <!-- Bottom Sidebar -->
                 <div class="side-bar-bottom white-color">
-                    <figure v-for="contact in contacts" class="friends-picture left-md-pdg">
-                        <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="avatar 1">
+                    <figure v-for="contact in contacts" class="friends-picture left-md-pdg" @click="">
+                        <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="avatar">
                         <p class="md-size-text left-small-pdg"> {{contact.name}} </p>
                     </figure>
                 </div>

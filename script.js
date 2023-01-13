@@ -35,6 +35,10 @@ const app = Vue.createApp ({
     
     data(){
         return{
+            user: {
+              name: 'Giulia Marino',
+              avatar: '_io'
+            },
             contacts: [
                 {
                   name: 'Michele',
