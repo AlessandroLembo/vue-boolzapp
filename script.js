@@ -36,7 +36,6 @@ const app = Vue.createApp ({
     data(){
         return{
             currentIndex: 0,
-            selected: 'selected-chat',
             newMessage: '',
             user: {
               name: 'Giulia Marino',
@@ -144,8 +143,9 @@ const app = Vue.createApp ({
          },
 
          sendNewMessage(){
-            const message = {text: this.newMessage};
-            this.contacts.messages.push(message);
+            const message = {date: '13/01/2020',
+                             statu: 'sent',
+                             text: this.newMessage};
 
          }
          
