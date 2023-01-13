@@ -68,10 +68,10 @@
                 <header class="header-container lightgray-color">
                     <div class="current-chat">
                         <figure>
-                            <img src="img/avatar_1.jpg" alt="avatar 1">
+                            <img :src="buildAvatarUrl(contacts[currentIndex].avatar)" alt="avatar">
                         </figure>
                         <div class="left-small-pdg">
-                            <p class="md-size-text">Michele</p>
+                            <p class="md-size-text"> {{contacts[currentIndex].name}} </p>
                             <p class="md-size-text last-access">Ultimo accesso oggi alle</p>
                         </div>
                     </div>

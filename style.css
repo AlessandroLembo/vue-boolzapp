@@ -225,7 +225,7 @@ img{
     padding-top: 20px;
 }
 
-.side-bar-bottom figure:first-child{
+.selected-chat{
     background-color: rgb(210, 210, 210);
 }
 

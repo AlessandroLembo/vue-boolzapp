@@ -129,6 +129,10 @@ const app = Vue.createApp ({
     methods: {
          showCurrentConversation(index){
             this.currentIndex = index;
+         },
+
+         buildAvatarUrl(avatar) {
+          return `img/avatar${avatar}.jpg`;
          }
 
 
