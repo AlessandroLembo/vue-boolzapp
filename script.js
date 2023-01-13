@@ -35,6 +35,7 @@ const app = Vue.createApp ({
     
     data(){
         return{
+            currentIndex: 0,
             user: {
               name: 'Giulia Marino',
               avatar: '_io'
@@ -119,9 +120,18 @@ const app = Vue.createApp ({
                   }
                   ],
                 },
-              ]
+              ], 
+
            
         }
+    }, 
+
+    methods: {
+         setCurrentIndex(index){
+            this.currentIndex = index;
+         }
+
+
     }
 
 });

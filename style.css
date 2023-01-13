@@ -268,18 +268,18 @@ img{
 }
 
 .row{
-    width: 100%;
     height: 150px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.row.friend-text{
-    justify-content: start;
-}
-
-.row.my-text{
+.row.sent{
     justify-content: end;
+}
+
+.row.received{
+    justify-content: start;
 }
 
 .box-message{
@@ -289,16 +289,16 @@ img{
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
-.box-message.bkg-green{
+.bkg-green{
     background-color: #80ce90;
 }
 
-.box-message.bkg-white{
+.bkg-white{
     background-color: white;
 }
+
 
 .last-message-date{
     align-self: end;

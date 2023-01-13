@@ -54,7 +54,7 @@
 
                 <!-- Bottom Sidebar -->
                 <div class="side-bar-bottom white-color">
-                    <figure v-for="contact in contacts" class="friends-picture left-md-pdg" @click="">
+                    <figure v-for="contact in contacts" class="friends-picture left-md-pdg">
                         <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="avatar">
                         <p class="md-size-text left-small-pdg"> {{contact.name}} </p>
                     </figure>
@@ -85,18 +85,12 @@
                 <!-- Main chat message -->
                 <main class="main-container">
                     <div class="content-chat">
-                        <div class="row friend-text">
-                            <div class="box-message bkg-white">
-                                <p class="md-size-text">Stasera pizza fatta in casa</p>
-                                <span class="last-message-date">10/01/2020 15:30:55</span>
+                        <div v-for="(message, i) in contacts[currentIndex].messages" class="row" :class="message.status">
+                            <div  class="box-message" :class="message.status === 'received' ? 'bkg-white' : 'bkg-green' ">
+                                <p class="md-size-text">{{contacts[currentIndex].messages[i].text}}</p>
+                                <span class="last-message-date">{{contacts[currentIndex].messages[i].date}}</span>
                             </div>
                         </div>
-                        <div class="row my-text">
-                            <div class="box-message bkg-green">
-                                <p class="md-size-text">Ci sono! Per che ora veniamo?</p>
-                                <span class="last-message-date">10/01/2020 15:50:00</span>
-                            </div>
-                        </div>                        
                     </div>
                 </main>
                 
