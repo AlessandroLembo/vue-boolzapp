@@ -54,8 +54,8 @@
 
                 <!-- Bottom Sidebar -->
                 <div class="side-bar-bottom white-color">
-                    <figure v-for="(contact, i) in contacts" class="friends-picture left-md-pdg" @click="showCurrentConversation(i)">
-                        <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="avatar">
+                    <figure v-for="(contact, i) in contacts" class="friends-picture left-md-pdg" @click="showCurrentConversation(i)" :class="i === currentIndex ? 'selected-chat' : '' ">
+                        <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="avatar" >
                         <p class="md-size-text left-small-pdg"> {{contact.name}} </p>
                     </figure>
                 </div>
@@ -100,7 +100,7 @@
                         <i class="fa-regular fa-face-smile icon-style"></i>
                     </div>
                     <div class="box-container">
-                        <input type="text" class="box-new-message input-style" placeholder="Scrivi un messaggio">
+                        <input type="text" class="box-new-message input-style" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendNewMessage">
                     </div>
                     <div class="vocal-message">
                         <i class="fa-solid fa-microphone icon-style"></i>

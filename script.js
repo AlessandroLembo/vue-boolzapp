@@ -36,6 +36,8 @@ const app = Vue.createApp ({
     data(){
         return{
             currentIndex: 0,
+            selected: 'selected-chat',
+            newMessage: '',
             user: {
               name: 'Giulia Marino',
               avatar: '_io'
@@ -126,6 +128,12 @@ const app = Vue.createApp ({
         }
     }, 
 
+    computed: {
+         currentContact(){
+            return this.contacts[this.currenntIndex];
+         }
+    },
+
     methods: {
          showCurrentConversation(index){
             this.currentIndex = index;
@@ -133,8 +141,14 @@ const app = Vue.createApp ({
 
          buildAvatarUrl(avatar) {
           return `img/avatar${avatar}.jpg`;
-         }
+         },
 
+         sendNewMessage(){
+            const message = {text: this.newMessage};
+            this.contacts.messages.push(message);
+
+         }
+         
 
     }
 
