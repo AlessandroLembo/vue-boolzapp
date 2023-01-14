@@ -36,7 +36,11 @@ const app = Vue.createApp ({
     data(){
         return{
             currentIndex: 0,
-            newMessage: '',
+            newMessage: {
+              date: '10/01/2020 15:50:00',
+              text: '',
+              status: 'sent'
+            },
             user: {
               name: 'Giulia Marino',
               avatar: '_io'
@@ -125,13 +129,8 @@ const app = Vue.createApp ({
 
            
         }
+        
     }, 
-
-    computed: {
-         currentContact(){
-            return this.contacts[this.currenntIndex];
-         }
-    },
 
     methods: {
          showCurrentConversation(index){
@@ -143,15 +142,27 @@ const app = Vue.createApp ({
          },
 
          sendNewMessage(){
-            const message = {date: '13/01/2020',
-                             statu: 'sent',
-                             text: this.newMessage};
+          if(this.newMessage){
+            const message = {...this.newMessage};
+            this.contacts[this.currentIndex].messages.push(message);
+            this.clearInput();
+            //  this.$refs.input.focus();
+          }
+         }, 
 
+
+         clearInput() {
+          this.newMessage = {
+            date: '10/01/2020 15:50:00',
+            text: '',
+            status: 'sent'
+          };
          }
-         
-
+          
+        
     }
-
+    
 });
 
 app.mount('#root');
+
