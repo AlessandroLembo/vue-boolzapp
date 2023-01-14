@@ -285,7 +285,7 @@ img{
 
 .box-message{
     border-radius: 10px;
-    margin: 0 8rem;
+    margin: 0 4rem;
     padding: 20px 20px 5px;
 
     display: flex;
@@ -294,10 +294,12 @@ img{
 
 .bkg-green{
     background-color: #80ce90;
+    text-align: right;
 }
 
 .bkg-white{
     background-color: white;
+    text-align: left;
 }
 
 

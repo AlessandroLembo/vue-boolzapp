@@ -31,6 +31,8 @@ permette di cancellare il messaggio selezionato;
 ● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti.
 */
 
+const dt = luxon.DateTime;
+
 const app = Vue.createApp ({
     
     data(){
@@ -137,9 +139,16 @@ const app = Vue.createApp ({
         
     }, 
 
+    computed: {
+      currentContact() {
+         return this.contacts[this.currentIndex];
+      }
+    },
+
     methods: {
          showCurrentConversation(index){
             this.currentIndex = index;
+            this.getCurrentMoment();
          },
 
          buildAvatarUrl(avatar) {
@@ -157,7 +166,6 @@ const app = Vue.createApp ({
 
          answerMessage() {
             const answer = () => {
-            console.log('ciao');
             this.contacts[this.currentIndex].messages.push(this.newAnswerMessage);   
             }
 
@@ -171,6 +179,10 @@ const app = Vue.createApp ({
             text: '',
             status: 'sent'
           };
+         },
+
+         getCurrentMoment() {
+          return dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
          }
           
         
