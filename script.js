@@ -36,10 +36,15 @@ const app = Vue.createApp ({
     data(){
         return{
             currentIndex: 0,
-            newMessage: {
+            newMyMessage: {
               date: '10/01/2020 15:50:00',
               text: '',
               status: 'sent'
+            },
+            newAnswerMessage: {
+              date: '10/01/2020 15:50:01',
+              text: 'Ok',
+              status: 'received'
             },
             user: {
               name: 'Giulia Marino',
@@ -141,18 +146,27 @@ const app = Vue.createApp ({
           return `img/avatar${avatar}.jpg`;
          },
 
-         sendNewMessage(){
-          if(this.newMessage){
-            const message = {...this.newMessage};
+         continueCurrentConversation(){
+          if(this.newMyMessage){
+            const message = {...this.newMyMessage};
             this.contacts[this.currentIndex].messages.push(message);
+            this.answerMessage();
             this.clearInput();
-            //  this.$refs.input.focus();
           }
          }, 
 
+         answerMessage() {
+            const answer = () => {
+            console.log('ciao');
+            this.contacts[this.currentIndex].messages.push(this.newAnswerMessage);   
+            }
 
+            setTimeout(answer, 1000)
+         },
+         
+         
          clearInput() {
-          this.newMessage = {
+          this.newMyMessage = {
             date: '10/01/2020 15:50:00',
             text: '',
             status: 'sent'
