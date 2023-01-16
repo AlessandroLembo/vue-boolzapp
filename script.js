@@ -38,16 +38,7 @@ const app = Vue.createApp ({
     data(){
         return{
             currentIndex: 0,
-            newMyMessage: {
-              date: '10/01/2020 15:50:00',
-              text: '',
-              status: 'sent'
-            },
-            newAnswerMessage: {
-              date: '10/01/2020 15:50:01',
-              text: 'Ok',
-              status: 'received'
-            },
+            newMessage: '',
             user: {
               name: 'Giulia Marino',
               avatar: '_io'
@@ -133,59 +124,47 @@ const app = Vue.createApp ({
                   ],
                 },
               ], 
-
-           
         }
         
     }, 
 
-    computed: {
-      currentContact() {
-         return this.contacts[this.currentIndex];
-      }
-    },
 
     methods: {
          showCurrentConversation(index){
             this.currentIndex = index;
-            this.getCurrentMoment();
          },
 
-         buildAvatarUrl(avatar) {
+         setAvatarUrl(avatar) {
           return `img/avatar${avatar}.jpg`;
          },
 
          continueCurrentConversation(){
-          if(this.newMyMessage){
-            const message = {...this.newMyMessage};
+          if(this.newMessage){
+            const message = {
+                status: 'sent',
+                date: this.getCurrentMoment(),
+                text: this.newMessage
+            };
             this.contacts[this.currentIndex].messages.push(message);
-            this.answerMessage();
-            this.clearInput();
+
+            this.newMessage = '';
+
+            setTimeout(() => {
+               const answer = {
+                status: 'received',
+                date: this.getCurrentMoment(),
+                text: 'ok'
+               }
+
+               this.contacts[this.currentIndex].messages.push(answer);
+            }, 1000)
           }
          }, 
 
-         answerMessage() {
-            const answer = () => {
-            this.contacts[this.currentIndex].messages.push(this.newAnswerMessage);   
-            }
-
-            setTimeout(answer, 1000)
-         },
-         
-         
-         clearInput() {
-          this.newMyMessage = {
-            date: '10/01/2020 15:50:00',
-            text: '',
-            status: 'sent'
-          };
-         },
-
          getCurrentMoment() {
           return dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-         }
-          
-        
+         },
+                  
     }
     
 });

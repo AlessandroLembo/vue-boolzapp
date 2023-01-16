@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="search white-color">
-                        <input type="text" class="search-box icon-search-box input-style" placeholder="Cerca o inizia una nuova chat">
+                        <input class="search-box icon-search-box input-style" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@
                 <header class="header-container lightgray-color">
                     <div class="current-chat">
                         <figure>
-                            <img :src="buildAvatarUrl(contacts[currentIndex].avatar)" alt="avatar">
+                            <img :src="setAvatarUrl(contacts[currentIndex].avatar)" alt="avatar">
                         </figure>
                         <div class="left-small-pdg">
                             <p class="md-size-text"> {{contacts[currentIndex].name}} </p>
@@ -103,7 +103,7 @@
                         <i class="fa-regular fa-face-smile icon-style"></i>
                     </div>
                     <div class="box-container">
-                        <input type="text" class="box-new-message input-style" placeholder="Scrivi un messaggio" v-model.trim="newMyMessage.text" @keyup.enter="continueCurrentConversation" @keyup.esc="clearInput">
+                        <input type="text" class="box-new-message input-style" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="continueCurrentConversation">
                     </div>
                     <div class="vocal-message">
                         <i class="fa-solid fa-microphone icon-style"></i>
