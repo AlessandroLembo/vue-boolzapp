@@ -39,6 +39,7 @@ const app = Vue.createApp ({
         return{
             currentIndex: 0,
             newMessage: '',
+            searchedContact: '',
             user: {
               name: 'Giulia Marino',
               avatar: '_io'
@@ -128,6 +129,13 @@ const app = Vue.createApp ({
         
     }, 
 
+    // computed: {
+    //      filteredContacts(){
+    //       const searcherdContact = this.contact.toLowerCase();
+    //       return this.contacts.filter(contact => contact.name.toLowerCase().includes(searcherdContact));
+    //      }
+
+    // },
 
     methods: {
          showCurrentConversation(index){
@@ -164,8 +172,16 @@ const app = Vue.createApp ({
          getCurrentMoment() {
           return dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
          },
+
+         filteredContacts(){
+            this.contacts.forEach(contact => {
+                contact.visible = contact.name.includes(this.searchedContact)
+            })
+         }
                   
     }
+
+
     
 });
 

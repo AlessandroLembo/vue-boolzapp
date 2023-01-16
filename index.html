@@ -51,16 +51,18 @@
                         </div>
                     </div>
                     <div class="search white-color">
-                        <input class="search-box icon-search-box input-style" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="searchedContact" @keyup="filteredContacts" class="search-box icon-search-box input-style" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
 
                 <!-- Bottom Sidebar -->
                 <div class="side-bar-bottom white-color">
-                    <figure v-for="(contact, i) in contacts" class="friends-picture left-md-pdg" @click="showCurrentConversation(i)" :class="i === currentIndex ? 'selected-chat' : '' ">
-                        <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="avatar" >
-                        <p class="md-size-text left-small-pdg"> {{contact.name}} </p>
-                    </figure>
+                    <div v-for="(contact, i) in contacts" class="left-md-pdg" @click="showCurrentConversation(i)" :class="i === currentIndex ? 'selected-chat' : '' ">
+                        <figure v-if="contact.visible === true" class="friends-picture ">
+                           <img :src="'img/avatar'+contact.avatar+'.jpg'" alt="avatar" >
+                           <p class="md-size-text left-small-pdg"> {{contact.name}} </p>
+                        </figure>
+                    </div>
                 </div>
             
             </div>
