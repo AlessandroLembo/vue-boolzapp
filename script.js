@@ -133,6 +133,11 @@ const app = Vue.createApp ({
     methods: {
          showCurrentConversation(index){
             this.currentIndex = index;
+            this.searchedContact = '';
+            this.contacts.forEach(contact => {
+              contact.visible = true;
+
+          })
          },
 
          setAvatarUrl(avatar) {
