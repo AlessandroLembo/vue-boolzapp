@@ -129,13 +129,6 @@ const app = Vue.createApp ({
         
     }, 
 
-    // computed: {
-    //      filteredContacts(){
-    //       const searcherdContact = this.contact.toLowerCase();
-    //       return this.contacts.filter(contact => contact.name.toLowerCase().includes(searcherdContact));
-    //      }
-
-    // },
 
     methods: {
          showCurrentConversation(index){
@@ -175,7 +168,7 @@ const app = Vue.createApp ({
 
          filteredContacts(){
             this.contacts.forEach(contact => {
-                contact.visible = contact.name.includes(this.searchedContact)
+                contact.visible = contact.name.toLowerCase().includes(this.searchedContact.toLowerCase())
             })
          }
                   
