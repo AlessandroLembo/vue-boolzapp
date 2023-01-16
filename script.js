@@ -171,7 +171,7 @@ const app = Vue.createApp ({
           return dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
          },
 
-         filteredContacts(){
+         showFilteredContact(){
             this.contacts.forEach(contact => {
                 contact.visible = contact.name.toLowerCase().includes(this.searchedContact.toLowerCase())
             })
